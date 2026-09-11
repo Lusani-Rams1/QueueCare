@@ -290,7 +290,7 @@ async function loadPatients(){
     try{
 
         const response = await fetch(
-            "https://queuesystem-b1gr.onrender.com/patients"
+            "https://queuecare-production-8111.up.railway.app/patients"
         );
 
         const patients =
@@ -444,7 +444,7 @@ document
 
             const response =
                 await fetch(
-                    "https://queuesystem-b1gr.onrender.com/register-patient",
+                    "https://queuecare-production-8111.up.railway.app/register-patient",
                     {
 
                         method:"POST",

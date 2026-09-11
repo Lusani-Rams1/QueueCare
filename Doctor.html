@@ -111,7 +111,7 @@ async function loadCurrentPatient(){
     try{
 
         const response = await fetch(
-            "https://queuesystem-b1gr.onrender.com/current-patient"
+            "https://queuecare-production-8111.up.railway.app//current-patient"
         );
 
         const patient =
@@ -171,7 +171,7 @@ async function loadUpcoming(){
     try{
 
         const response = await fetch(
-            "https://queuesystem-b1gr.onrender.com/upcoming-patients"
+            "https://queuecare-production-8111.up.railway.app/upcoming-patients"
         );
 
         const patients =
@@ -234,7 +234,7 @@ async function callNextPatient(){
 
         const response = await fetch(
 
-            "https://queuesystem-b1gr.onrender.com/call-next",
+            "https://queuecare-production-8111.up.railway.app/call-next",
 
             {
                 method:"POST"
@@ -271,7 +271,7 @@ async function completePatient(){
 
         const response = await fetch(
 
-            "https://queuesystem-b1gr.onrender.com/complete-patient",
+            "https://queuecare-production-8111.up.railway.app/complete-patient",
 
             {
                 method:"POST"
@@ -304,7 +304,7 @@ async function addDelay(){
 
         const response = await fetch(
 
-            "https://queuesystem-b1gr.onrender.com/add-delay",
+        "https://queuecare-production-8111.up.railway.app/add-delay",
 
             {
                 method:"POST"
