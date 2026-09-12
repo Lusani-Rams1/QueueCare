@@ -12,12 +12,15 @@ const JWT_SECRET = process.env.JWT_SECRET || "queuecare_secret_key_2026";
 app.use(cors());
 app.use(express.json());
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT || 3306,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    database: process.env.DB_NAME,
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 });
 
 function query(sql, params = []) {
@@ -439,12 +442,15 @@ app.delete("/patient/:id", async (req, res) => {
 });
 
 // ================= START =================
-db.connect(async (err) => {
+db.getConnection(async (err, connection) => {
     if (err) {
-        console.error(`Database connection failed: code=${err.code} message=${err.message} host=${process.env.DB_HOST} port=${process.env.DB_PORT}`);        return;
+        console.error(`Database connection failed: code=${err.code} message=${err.message} host=${process.env.DB_HOST} port=${process.env.DB_PORT}`);
+        return;
     }
 
     console.log("Connected to MySQL");
+    connection.release();
+
     try {
         await setupDatabase();
         console.log("QueueCare database checked.");
