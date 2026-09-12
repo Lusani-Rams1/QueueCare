@@ -441,8 +441,7 @@ app.delete("/patient/:id", async (req, res) => {
 // ================= START =================
 db.connect(async (err) => {
     if (err) {
-        console.error("Database connection failed:", err.message);
-        return;
+        console.error(`Database connection failed: code=${err.code} message=${err.message} host=${process.env.DB_HOST} port=${process.env.DB_PORT}`);        return;
     }
 
     console.log("Connected to MySQL");

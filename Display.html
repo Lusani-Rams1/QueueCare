@@ -133,7 +133,7 @@ async function loadQueue(){
     try{
 
         const res =
-            await fetch("https://queuecare-production-8111.up.railway.app/patients");
+            await fetch("https://queuecare-production-8111.up.railway.app/upcoming-patients");
 
         const patients =
             await res.json();
