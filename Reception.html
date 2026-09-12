@@ -290,7 +290,7 @@ async function loadPatients(){
     try{
 
         const response = await fetch(
-            "https://queuecare-production-8111.up.railway.app/Patients"
+            "https://queuecare-production-8111.up.railway.app/patients"
         );
 
         const patients =
@@ -444,7 +444,7 @@ document
 
             const response =
                 await fetch(
-                    "https://queuecare-production-8111.up.railway.app/register-patient",
+                    "https://queuecare-production-8111.up.railway.app/register-patients",
                     {
 
                         method:"POST",

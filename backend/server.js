@@ -233,7 +233,7 @@ app.get("/patients", async (req, res) => {
     }
 });
 
-app.post("/register-patient", async (req, res) => {
+app.post("/register-patients", async (req, res) => {
     try {
         const { patient_name, email, phone, notes, walk_in } = req.body;
         if (!patient_name || !email || !phone) {
