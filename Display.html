@@ -91,12 +91,12 @@ setInterval(updateClock, 1000);
 updateClock();
 
 // CURRENT PATIENT
-async function loadCurrentPatient(){
+async function loadCurrentPatients(){
 
     try{
 
         const res =
-            await fetch("https://queuecare-production-8111.up.railway.app/current-patient");
+            await fetch("https://queuecare-production-8111.up.railway.app/current-patients");
 
         const patient =
             await res.json();
@@ -188,12 +188,12 @@ async function loadQueue(){
 }
 
 // AUTO REFRESH
-loadCurrentPatient();
+loadCurrentPatients();
 loadQueue();
 
 setInterval(() => {
 
-    loadCurrentPatient();
+    loadCurrentPatients();
     loadQueue();
 
 }, 5000);
