@@ -354,6 +354,44 @@ tbody tr:hover td {
 
 .close-btn:hover { color: var(--text-primary); }
 
+/*Force readable white text inside any modal, even on fields
+  that aren't wrapped in .form-group (e.g. Reception's modal) */
+.modal-content label,
+.modal-content p,
+.modal-content span,
+.modal-content h2,
+.modal-content h3 {
+    color: #ffffff;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    width: 100%;
+    padding: 10px 14px;
+    margin-top: 4px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 13px;
+    outline: none;
+}
+
+.modal-content input::placeholder,
+.modal-content textarea::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.modal-content select option {
+    background: #1e2130;
+    color: #ffffff;
+}
+
+.modal-content button {
+    color: #ffffff;
+}
+
 /*Form groups*/
 .form-group {
     margin-bottom: 16px;
@@ -437,6 +475,19 @@ tbody tr:hover td {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* ADMIN PAGE - overrides the unscoped `body{overflow:hidden;...}`
+   rules further down (from Display/MinniesHelp) that were clipping
+   the dashboard and preventing it from scrolling */
+body.admin-page {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 0;
+    height: auto;
+}
 
 /* ADMIN DASHBOARD*/
 .stats-grid {
