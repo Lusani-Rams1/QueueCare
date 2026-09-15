@@ -205,7 +205,6 @@ th {
     padding: 10px 12px;
     font-size: 12px;
     font-weight: 500;
-    color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.6px;
     text-align: left;
@@ -301,7 +300,6 @@ tbody tr:hover td {
 .stat-row strong {
     font-size: 16px;
     font-weight: 600;
-    color: var(--text-primary);
 }
 
 /*MODAL*/
